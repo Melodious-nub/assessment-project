@@ -39,3 +39,33 @@
 .form-check-input, .form-check-label {
     cursor: pointer; /* Ensures the cursor is a pointer on the checkbox */
 }
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 30px 0; /* Adjust margin as needed */
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1; /* This will make the lines take equal space */
+    border-top: 1px solid #8F92A1; /* Change color and style as needed */
+    margin: 0 12px; /* Adjust space between line and text */
+}
+
+.google-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px; /* Adjust padding for button size */
+    border-radius: 16px;
+}
+
+.google-logo {
+    margin-right: 8px; /* Space between logo and text */
+}
+
+.google-text {
+    margin: auto; /* Push text to the far right */
+}
