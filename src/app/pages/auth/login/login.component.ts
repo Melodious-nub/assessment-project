@@ -18,6 +18,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  passwordVisible = false;
+  password: string = '';
+
+  togglePasswordVisibility(): void {
+    this.passwordVisible = !this.passwordVisible;
+    let passwordInput = document.getElementById('Password') as HTMLInputElement;
+    passwordInput.type = this.passwordVisible ? 'text' : 'password';
+  }
+
   onLogin(form: NgForm) {
     this.isLoading = true;
     this.data.login(form).subscribe(
