@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="login-page">
     <div class="row vh-100">
       <!-- Left Half: Login Form -->
@@ -10,7 +11,7 @@
                 <a routerLink="signup" style="color: #0052CC; font-weight: 500;">Sign up</a>
             </span>
           </div>
-          <form (ngSubmit)="onLogin(loginForm)" #loginForm="ngForm">
+          <form #loginForm="ngForm">
             <mat-form-field appearance="outline" class="w-100">
                 <mat-label>Email address</mat-label>
                 <input matInput type="email" id="email" placeholder="Enter email" required [(ngModel)]="email" name="email">
@@ -35,7 +36,7 @@
                 <a routerLink="forgot-password" class="float-end" style="color: #0052CC; font-weight: 500;">Forgot Password?</a>
             </div>
 
-            <button mat-raised-button color="primary" type="submit" class="w-100">Login</button>
+            <button mat-raised-button color="primary" type="button" class="w-100" (click)="onLogin(loginForm)" [disabled]="isLoading">Login</button>
           </form>
 
           <div class="divider">

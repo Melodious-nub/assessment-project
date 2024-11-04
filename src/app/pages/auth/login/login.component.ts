@@ -11,7 +11,6 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   isLoading: boolean = false;
-  errorMessage: string | null = null;
   email: string = ''; // Added email property
   password: string = ''; // Added password property
   rememberMe: boolean = false; // Added rememberMe property
@@ -27,23 +26,22 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(form: NgForm) {
+    console.log(form.value);
+    
     this.isLoading = true;
     this.data.login(form).subscribe(
       (response) => {
         if (response.success) {
-          console.log(form, response);
         this.isLoading = false;
         // Store token in localStorage
-        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('token', response.data?.token);
         this.router.navigate(['/admin/dashboard']); // Redirect to admin page after successful login
         } else {
           this.isLoading = false;
-          this.errorMessage = 'Invalid email or password';
         }
       },
       (error) => {
         this.isLoading = false;
-        this.errorMessage = 'Server error.';
       }
     );
   }
