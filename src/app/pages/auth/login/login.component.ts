@@ -12,19 +12,18 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
   isLoading: boolean = false;
   errorMessage: string | null = null;
+  email: string = ''; // Added email property
+  password: string = ''; // Added password property
+  rememberMe: boolean = false; // Added rememberMe property
+  passwordVisible: boolean = false;
 
   constructor(private data: DataService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  passwordVisible = false;
-  password: string = '';
-
   togglePasswordVisibility(): void {
     this.passwordVisible = !this.passwordVisible;
-    let passwordInput = document.getElementById('Password') as HTMLInputElement;
-    passwordInput.type = this.passwordVisible ? 'text' : 'password';
   }
 
   onLogin(form: NgForm) {
@@ -32,7 +31,7 @@ export class LoginComponent implements OnInit {
     this.data.login(form).subscribe(
       (response) => {
         if (response.success) {
-          // console.log(form, response);
+          console.log(form, response);
         this.isLoading = false;
         // Store token in localStorage
         localStorage.setItem('token', response.data.token);

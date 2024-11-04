@@ -1,0 +1,41 @@
+.login-page {
+    max-width: 99%;
+}
+
+.login-box {
+    padding: 0 2.4rem;
+    margin-top: 70px;
+}
+
+.image-section {
+    background-image: url('../../../../assets/images/Image.svg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+}
+
+.heading-text {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 34px;
+    letter-spacing: -0.4px;
+}
+
+.sub-head {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: -0.22px;
+    color: #8F92A1;
+}
+
+::ng-deep .mdc-text-field--outlined {
+    --mdc-outlined-text-field-container-shape: 24px;
+}
+
+.form-check {
+    cursor: pointer; /* Changes the cursor to a pointer when hovering */
+}
+
+.form-check-input, .form-check-label {
+    cursor: pointer; /* Ensures the cursor is a pointer on the checkbox */
+}

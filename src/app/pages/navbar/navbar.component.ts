@@ -10,7 +10,7 @@ export class NavbarComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 20; // Adjust scroll distance as needed
+    this.isScrolled = window.scrollY > 10; // Adjust scroll distance as needed
   }
 
 }

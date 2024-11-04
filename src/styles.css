@@ -10,3 +10,7 @@ html, body {
 .container-fluid {
     width: 95%;
 }
+
+a {
+    text-decoration: none; /* Removes underline from all links */
+}

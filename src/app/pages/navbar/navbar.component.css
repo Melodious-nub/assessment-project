@@ -1,6 +1,7 @@
 .navbar {
     transition: background-color 0.3s ease;
     background-color: transparent; /* Transparent initially */
+    height: 90px;
 }
   
 .navbar.scrolled {
@@ -15,5 +16,8 @@
 
 .form-select {
     border: none;
-    background-color: transparent;
+    background-color: rgba(143, 146, 161, 0.05);
+    border-radius: 16px;
+    font-weight: 600;
+    padding-left: 18px;
 }
