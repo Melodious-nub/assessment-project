@@ -1,0 +1,101 @@
+.login-page {
+    width: 99%;
+}
+
+.login-box {
+    padding: 0 2.4rem;
+    margin-top: 70px;
+    max-width: 560px;
+}
+
+.image-section {
+    background-image: url('../../../../assets/images/Image.svg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+}
+
+.heading-text {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 34px;
+    letter-spacing: -0.4px;
+}
+
+.sub-head {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: -0.22px;
+    color: #8F92A1;
+}
+
+.form-check {
+    cursor: pointer; /* Changes the cursor to a pointer when hovering */
+}
+
+.form-check-input, .form-check-label {
+    cursor: pointer; /* Ensures the cursor is a pointer on the checkbox */
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 30px 0; /* Adjust margin as needed */
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1; /* This will make the lines take equal space */
+    border-top: 1px solid #8F92A1; /* Change color and style as needed */
+    margin: 0 12px; /* Adjust space between line and text */
+}
+
+.google-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px; /* Adjust padding for button size */
+    border-radius: 16px;
+}
+
+.google-logo {
+    margin-right: 8px; /* Space between logo and text */
+}
+
+.google-text {
+    margin: auto; /* Push text to the far right */
+}
+
+/* for angular material form field */
+::ng-deep .mdc-text-field--outlined {
+    --mdc-outlined-text-field-container-shape: 24px;
+}
+
+::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    margin-top: 14px; /*you can tweak around with this, */
+    margin-bottom: -22px; /*and this*/
+    padding: 0px;
+}
+
+/*you also have to adjust the label, after the above*/
+::ng-deep .mat-mdc-form-field:not(.mat-form-field-disabled) .mat-mdc-floating-label.mdc-floating-label {
+    top: 50%;
+}
+
+::ng-deep .mdc-floating-label--float-above{
+    top: 60% !important;
+}
+
+/* for overflowing content */
+@media (max-width: 1100px) { 
+    .login-page {
+        max-width: 98%;
+    }
+}
+
+@media (max-width: 560px) {
+    .login-page {
+        max-width: 96%;
+    }
+}

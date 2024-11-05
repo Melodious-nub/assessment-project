@@ -20,6 +20,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatIconModule,
     MatCheckboxModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
     
     ToastrModule.forRoot({
       timeOut: 2000,

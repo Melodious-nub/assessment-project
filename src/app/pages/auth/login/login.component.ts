@@ -3,6 +3,7 @@ import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   rememberMe: boolean = false; // Added rememberMe property
   passwordVisible: boolean = false;
 
-  constructor(private data: DataService, private router: Router) { }
+  constructor(private data: DataService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -26,24 +27,27 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(form: NgForm) {
-    console.log(form.value);
-    
-    this.isLoading = true;
-    this.data.login(form).subscribe(
-      (response) => {
-        if (response.success) {
-        this.isLoading = false;
-        // Store token in localStorage
-        localStorage.setItem('token', response.data?.token);
-        this.router.navigate(['/admin/dashboard']); // Redirect to admin page after successful login
-        } else {
+    if (form.valid) {
+      this.isLoading = true;
+      this.data.login(form).subscribe(
+        (response) => {
+          if (response.success) {
+          this.isLoading = false;
+          // Store token in localStorage
+          localStorage.setItem('token', response.data?.token);
+          this.toastr.success('Login successful');
+          this.router.navigate(['/admin/dashboard']); // Redirect to admin page after successful login
+          } else {
+            this.isLoading = false;
+            this.toastr.warning('Login failed');
+          }
+        },
+        (error) => {
+          this.toastr.warning('Server error...');
           this.isLoading = false;
         }
-      },
-      (error) => {
-        this.isLoading = false;
-      }
-    );
+      );
+    }
   }
 
 }

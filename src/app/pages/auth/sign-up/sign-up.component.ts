@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { DataService } from '../../../services/data.service';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -6,5 +9,21 @@ import { Component } from '@angular/core';
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent {
+  isLoading: boolean = false;
+  email: string = '';
+  fullName: string = '';
+  userName: string = '';
+  password: string = '';
+  rememberMe: boolean = false;
+  passwordVisible: boolean = false;
+
+  constructor(private data: DataService, private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
+  togglePasswordVisibility(): void {
+    this.passwordVisible = !this.passwordVisible;
+  }
 
 }

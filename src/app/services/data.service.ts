@@ -9,7 +9,7 @@ export class DataService {
 
   baseUrl: string = 'https://devsutraapi.azurewebsites.net';
   private dummyUser = {
-    email: 'test@example.com',
+    email: 'test@test.com',
     password: 'Admin123',
     token: 'dummy-jwt-token-12345',
   };

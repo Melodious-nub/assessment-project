@@ -1,1 +1,74 @@
 <app-navbar></app-navbar>
+<div class="login-page">
+    <div class="row vh-100">
+      <!-- Left Half: Login Form -->
+      <div class="col-lg-6 d-flex align-items-center justify-content-center">
+        <div class="login-box">
+          <h2 class="heading-text">Sign up to CaDas</h2>
+          <div class="sub-head mb-5">
+            <span class="me-2">Already have an account?</span>
+            <span>
+                <a routerLink="" style="color: #0052CC; font-weight: 600;">Sign in</a>
+            </span>
+          </div>
+          <form #loginForm="ngForm">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Full name</mat-label>
+                <input matInput type="text" id="fullName" placeholder="Enter full name" required [(ngModel)]="fullName" name="fullName">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>User name</mat-label>
+              <input matInput type="text" id="userName" placeholder="Enter user name" required [(ngModel)]="userName" name="email">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Email address</mat-label>
+              <input matInput type="email" id="email" placeholder="Enter email" required [(ngModel)]="email" name="email">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="passwordVisible ? 'text' : 'password'" id="password" placeholder="Enter password" required [(ngModel)]="password" name="password" type="password">
+                <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+                    <mat-icon>{{ passwordVisible ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" style="padding: 6px;">
+              <label class="form-check-label" for="flexCheckDefault" style="font-size: 14px; font-weight: 500;">
+                  <span>By creating an account, you agree to our </span>
+                  <span><a style="color: #0052CC; font-weight: 600;">Privacy Policy</a>, </span>
+                  <span><a style="color: #0052CC; font-weight: 600;">Terms and Conditions</a> </span>
+                  <span> and </span>
+                  <span><a style="color: #0052CC; font-weight: 600;">Notification settings</a></span>
+              </label>
+            </div>
+
+            <button mat-raised-button color="primary" type="submit" class="w-100" [disabled]="isLoading"><mat-spinner *ngIf="isLoading" diameter="20"></mat-spinner> <span *ngIf="!isLoading">Login</span></button>
+          </form>
+
+          <div class="divider">
+            <span style="color: #8F92A1; size: 12px; ">OR</span>
+          </div>
+
+          <div class="d-flex pb-5">
+            <button type="button" class="btn btn-light google-button w-100 me-3">
+              <img src="../../../../assets/images/Logo_Google.svg" alt="logo_google" class="google-logo"> 
+              <span class="google-text">Continue with Google</span>
+            </button>
+            <button class="btn btn-light" style="border-radius: 16px; padding: 5px 15px;">
+                <i class="fa-brands fa-square-facebook" style="color: #4b4c4f;"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+  
+      <!-- Right Half: Background Image -->
+      <div class="col-lg-6 image-section d-none d-lg-block">
+        <!-- This section will have a background image -->
+      </div>
+    </div>
+</div>

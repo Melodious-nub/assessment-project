@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './services/auth.guard';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { SignUpComponent } from './pages/auth/sign-up/sign-up.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path:'', component: LoginComponent, pathMatch: 'full'},
@@ -17,7 +18,7 @@ const routes: Routes = [
   },
 
   // wildCard for notfound
-  // { path: '**', component: NotFoundComponent},
+  { path: '**', component: NotFoundComponent},
 ];
 
 @NgModule({
