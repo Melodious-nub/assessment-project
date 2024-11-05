@@ -1,8 +1,8 @@
-.login-page {
+.signUp-page {
     width: 99%;
 }
 
-.login-box {
+.signUp-box {
     padding: 0 2.4rem;
     margin-top: 70px;
     max-width: 560px;
@@ -89,13 +89,13 @@
 
 /* for overflowing content */
 @media (max-width: 1100px) { 
-    .login-page {
+    .signUp-page {
         max-width: 98%;
     }
 }
 
 @media (max-width: 560px) {
-    .login-page {
+    .signUp-page {
         max-width: 96%;
     }
 }

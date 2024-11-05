@@ -1,9 +1,9 @@
 <app-navbar></app-navbar>
-<div class="login-page">
+<div class="signUp-page">
     <div class="row vh-100">
-      <!-- Left Half: Login Form -->
+      <!-- Left Half: signUp Form -->
       <div class="col-lg-6 d-flex align-items-center justify-content-center">
-        <div class="login-box">
+        <div class="signUp-box">
           <h2 class="heading-text">Sign up to CaDas</h2>
           <div class="sub-head mb-5">
             <span class="me-2">Already have an account?</span>
@@ -11,7 +11,7 @@
                 <a routerLink="" style="color: #0052CC; font-weight: 600;">Sign in</a>
             </span>
           </div>
-          <form #loginForm="ngForm">
+          <form #signUpForm="ngForm">
             <mat-form-field appearance="outline" class="w-100">
                 <mat-label>Full name</mat-label>
                 <input matInput type="text" id="fullName" placeholder="Enter full name" required [(ngModel)]="fullName" name="fullName">
@@ -46,7 +46,7 @@
               </label>
             </div>
 
-            <button mat-raised-button color="primary" type="submit" class="w-100" [disabled]="isLoading"><mat-spinner *ngIf="isLoading" diameter="20"></mat-spinner> <span *ngIf="!isLoading">Login</span></button>
+            <button mat-raised-button color="primary" type="submit" class="w-100" [disabled]="isLoading"><mat-spinner *ngIf="isLoading" diameter="20"></mat-spinner> <span *ngIf="!isLoading">signUp</span></button>
           </form>
 
           <div class="divider">
