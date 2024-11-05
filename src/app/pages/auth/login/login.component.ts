@@ -4,11 +4,13 @@ import { Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { fadeIn, rotateIn, slideInLeft, slideInUp, zoomIn } from '../../../services/animations';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
+  animations: [fadeIn, slideInUp, slideInLeft, zoomIn, rotateIn ]
 })
 export class LoginComponent implements OnInit {
   isLoading: boolean = false;

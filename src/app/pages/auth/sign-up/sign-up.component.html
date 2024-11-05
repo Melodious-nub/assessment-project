@@ -1,17 +1,17 @@
 <app-navbar></app-navbar>
-<div class="signUp-page">
+<div class="signUp-page" >
     <div class="row vh-100">
       <!-- Left Half: signUp Form -->
       <div class="col-lg-6 d-flex align-items-center justify-content-center">
         <div class="signUp-box">
-          <h2 class="heading-text">Sign up to CaDas</h2>
-          <div class="sub-head mb-5">
+          <h2 class="heading-text" @slideInLeft>Sign up to CaDas</h2>
+          <div class="sub-head mb-5" @slideInLeft>
             <span class="me-2">Already have an account?</span>
             <span>
                 <a routerLink="" style="color: #0052CC; font-weight: 600;">Sign in</a>
             </span>
           </div>
-          <form #signUpForm="ngForm">
+          <form #signUpForm="ngForm" @slideInUp>
             <mat-form-field appearance="outline" class="w-100">
                 <mat-label>Full name</mat-label>
                 <input matInput type="text" id="fullName" placeholder="Enter full name" required [(ngModel)]="fullName" name="fullName">
@@ -53,7 +53,7 @@
             <span style="color: #8F92A1; size: 12px; ">OR</span>
           </div>
 
-          <div class="d-flex pb-5">
+          <div class="d-flex pb-5" @rotateIn>
             <button type="button" class="btn btn-light google-button w-100 me-3">
               <img src="../../../../assets/images/Logo_Google.svg" alt="logo_google" class="google-logo"> 
               <span class="google-text">Continue with Google</span>
@@ -67,7 +67,7 @@
       </div>
   
       <!-- Right Half: Background Image -->
-      <div class="col-lg-6 image-section d-none d-lg-block">
+      <div class="col-lg-6 image-section d-none d-lg-block" @zoomIn>
         <!-- This section will have a background image -->
       </div>
     </div>

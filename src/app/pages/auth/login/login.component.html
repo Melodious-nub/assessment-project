@@ -4,14 +4,14 @@
       <!-- Left Half: Login Form -->
       <div class="col-lg-6 d-flex align-items-center justify-content-center">
         <div class="login-box">
-          <h2 class="heading-text">Let’s Sign You In</h2>
+          <h2 class="heading-text" @slideInLeft>Let’s Sign You In</h2>
           <div class="sub-head mb-5">
-            <span class="me-2">Don't have an account?</span>
+            <span class="me-2" @slideInLeft>Don't have an account?</span>
             <span>
                 <a routerLink="signup" style="color: #0052CC; font-weight: 600;">Sign up</a>
             </span>
           </div>
-          <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+          <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" @slideInUp>
             <mat-form-field appearance="outline" class="w-100">
                 <mat-label>Username or Email</mat-label>
                 <input matInput type="email" id="email" placeholder="Enter email" required [(ngModel)]="email" name="email">
@@ -43,7 +43,7 @@
             <span style="color: #8F92A1; size: 12px; ">OR</span>
           </div>
 
-          <div class="d-flex pb-5">
+          <div class="d-flex pb-5" @rotateIn>
             <button type="button" class="btn btn-light google-button w-100 me-3">
               <img src="../../../../assets/images/Logo_Google.svg" alt="logo_google" class="google-logo"> 
               <span class="google-text">Continue with Google</span>
@@ -57,7 +57,7 @@
       </div>
   
       <!-- Right Half: Background Image -->
-      <div class="col-lg-6 image-section d-none d-lg-block">
+      <div class="col-lg-6 image-section d-none d-lg-block" @zoomIn>
         <!-- This section will have a background image -->
       </div>
     </div>
