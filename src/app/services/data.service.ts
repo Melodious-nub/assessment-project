@@ -6,8 +6,6 @@ import { delay, Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-
-  baseUrl: string = 'https://devsutraapi.azurewebsites.net';
   private dummyUser = {
     email: 'test@test.com',
     password: 'Admin123',

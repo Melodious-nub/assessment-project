@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-app-admin',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './app-admin.component.css'
 })
 export class AppAdminComponent {
+  @ViewChild('sidebar') sidebar!: ElementRef;
+  @ViewChild('togglerBtn') togglerBtn!: ElementRef;
 
+  ngAfterViewInit() {
+    this.togglerBtn.nativeElement.addEventListener('click', this.toggleSidebar.bind(this));
+  }
+
+  toggleSidebar() {
+    this.sidebar.nativeElement.classList.toggle('collapsed');
+  }
 }

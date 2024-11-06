@@ -1,1 +1,73 @@
-<router-outlet></router-outlet>
+<div class="d-flex">
+  <!-- Sidebar -->
+  <aside id="sidebar" #sidebar class="sidebar-toggle">
+      <div class="sidebar-logo">
+        <a class="navbar-brand" routerLink=""><span class="me-1"><img src="../../../assets/images/Vector.svg" alt="Vector"></span> DashboardX</a>
+      </div>
+      <!-- Sidebar Navigation -->
+      <ul class="sidebar-nav p-0">
+          <li class="sidebar-item">
+              <a class="sidebar-link">
+                  <i class='bx bxs-dashboard'></i>
+                  <span>Dashboard</span>
+              </a>
+          </li>
+          <li class="sidebar-item">
+              <a class="sidebar-link">
+                  <i class="fa-regular fa-comment"></i>
+                  <span>Message</span>
+              </a>
+          </li>
+          <li class="sidebar-item">
+              <a class="sidebar-link">
+                  <i class='bx bx-check-square'></i>
+                  <span>Project</span>
+              </a>
+          </li>
+          <li class="sidebar-item">
+              <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                  data-bs-target="#Schedule" aria-expanded="true" aria-controls="Schedule">
+                  <i class='bx bx-calendar-week'></i>
+                  <span>Schedule</span>
+              </a>
+              <ul id="Schedule" class="sidebar-dropdown list-unstyled collapse ps-4" data-bs-parent="#sidebar">
+                  <li class="sidebar-item">
+                      <a class="sidebar-link">In Progress</a>
+                  </li>
+                  <li class="sidebar-item">
+                      <a class="sidebar-link">Pending</a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a class="sidebar-link">Completed</a>
+                  </li>
+              </ul>
+          </li>
+          <li class="sidebar-item">
+              <a class="sidebar-link">
+                  <span>Activity</span>
+              </a>
+          </li>
+      </ul>
+      <!-- Sidebar Navigation Ends -->
+      <div class="sidebar-footer">
+          <a class="sidebar-link">
+              <i class="lni lni-exit"></i>
+              <span>Setting</span>
+          </a>
+      </div>
+  </aside>
+  <!-- Sidebar Ends -->
+  <!-- Main Component -->
+  <div class="main">
+      <nav class="navbar navbar-expand">
+          <button class="toggler-btn" type="button" #togglerBtn>
+            <i class='bx bx-menu'></i>
+          </button>
+      </nav>
+      <main class="p-3">
+          <div class="container-fluid">
+            <router-outlet></router-outlet>
+          </div>
+      </main>
+  </div>
+</div>
