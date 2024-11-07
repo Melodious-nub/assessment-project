@@ -15,6 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatSidenavModule} from '@angular/material/sidenav'; 
 import {MatListModule} from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import {MatListModule} from '@angular/material/list';
   imports: [
     CommonModule,
     AdminRoutingModule,
+    FormsModule,
+
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,

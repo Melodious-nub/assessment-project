@@ -1,72 +1,64 @@
-<div class="d-flex">
-  <!-- Sidebar -->
-  <aside id="sidebar" #sidebar class="sidebar-toggle">
-      <div class="sidebar-logo">
-        <a class="navbar-brand" routerLink=""><span class="me-1"><img src="../../../assets/images/Vector.svg" alt="Vector"></span> DashboardX</a>
-      </div>
-      <!-- Sidebar Navigation -->
-      <ul class="sidebar-nav p-0 pt-4">
-          <li class="sidebar-item">
-              <a class="sidebar-link">
-                  <i class='bx bxs-dashboard'></i>
-                  <span>Dashboard</span>
-              </a>
-          </li>
-          <li class="sidebar-item">
-              <a class="sidebar-link">
-                  <i class="fa-regular fa-comment"></i>
-                  <span>Message</span>
-              </a>
-          </li>
-          <li class="sidebar-item">
-              <a class="sidebar-link">
-                  <i class='bx bx-check-square'></i>
-                  <span>Project</span>
-              </a>
-          </li>
-          <li class="sidebar-item">
-              <a class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                  data-bs-target="#Schedule" aria-expanded="true" aria-controls="Schedule">
-                  <i class='bx bx-calendar-week'></i>
-                  <span>Schedule</span>
-              </a>
-              <ul id="Schedule" class="sidebar-dropdown list-unstyled collapse ps-4" data-bs-parent="#sidebar">
-                  <li class="sidebar-item">
-                      <a class="sidebar-link">In Progress</a>
-                  </li>
-                  <li class="sidebar-item">
-                      <a class="sidebar-link">Pending</a>
-                  </li>
-                  <li class="sidebar-item">
-                    <a class="sidebar-link">Completed</a>
-                  </li>
-              </ul>
-          </li>
-          <li class="sidebar-item">
-              <a class="sidebar-link">
-                  <span>Activity</span>
-              </a>
-          </li>
-      </ul>
-      <!-- Sidebar Navigation Ends -->
-      <div class="sidebar-footer">
-          <a class="sidebar-link">
-              <i class="lni lni-exit"></i>
-              <span>Setting</span>
-          </a>
-      </div>
-  </aside>
-  <!-- Sidebar Ends -->
-  <!-- Main Component -->
-  <div class="main">
-      <nav class="navbar navbar-expand">
-          <button class="toggler-btn" type="button" #togglerBtn>
-            <i class='bx bx-menu'></i>
-          </button>
-      </nav>
-      
-      <main class="pt-3 px-4">
+<!-- SIDEBAR -->
+<section id="sidebar">
+    <a class="brand"><img src="../../../assets/images/Vector.svg" alt="Vector" class="me-2"> DashboardX</a>
+    <ul class="side-menu">
+        <li><a class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+        <li><a><i class='bx bx-message-rounded icon' ></i> Message</a></li>
+        <li><a><i class='bx bx-check-square icon' ></i> Project</a></li>
+        <li>
+            <a><i class='bx bx-calendar-week icon' ></i> Schedule <i class='bx bx-chevron-right icon-right' ></i></a>
+            <ul class="side-dropdown">
+                <li><a>In progress</a></li>
+                <li><a>Pending</a></li>
+                <li><a>Completed</a></li>
+            </ul>
+        </li>
+        <li><a><i class='bx bx-table icon' ></i> Activity</a></li>
+    </ul>
+    <div class="ads">
+        <div class="wrapper">
+            <a class="btn-upgrade">Upgrade</a>
+            <p>Become a <span>PRO</span> member and enjoy <span>All Features</span></p>
+        </div>
+    </div>
+</section>
+<!-- SIDEBAR -->
+
+<!-- NAVBAR -->
+<section id="content">
+    <!-- NAVBAR -->
+    <nav>
+        <i class='bx bx-menu toggle-sidebar' ></i>
+        <form action="#">
+            <div class="form-group">
+                <input type="text" placeholder="Search...">
+                <i class='bx bx-search icon' ></i>
+            </div>
+        </form>
+        <a class="nav-link">
+            <i class='bx bxs-bell icon' ></i>
+            <span class="badge">5</span>
+        </a>
+        <a class="nav-link">
+            <i class='bx bxs-message-square-dots icon' ></i>
+            <span class="badge">8</span>
+        </a>
+        <span class="divider"></span>
+        <div class="profile">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+            <ul class="profile-link">
+                <li><a><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
+                <li><a><i class='bx bxs-cog' ></i> Settings</a></li>
+                <li><a><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- NAVBAR -->
+
+    <!-- MAIN -->
+    <main>
         <router-outlet></router-outlet>
-      </main>
-  </div>
-</div>
+    </main>
+    <!-- MAIN -->
+</section>
+<!-- NAVBAR -->
