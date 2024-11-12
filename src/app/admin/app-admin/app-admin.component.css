@@ -1,3 +1,15 @@
+* {
+	--blue: #0052CC;      
+	--light-blue: #E0EBFF;   
+	--dark: #333333;        
+	--light: #F9FAFB;        
+	--dark-grey: #6B7280;    
+	--grey: #D1D5DB;        
+	--green: #22C55E;        
+	--red: #EF4444;         
+	--dark-blue: #00338D;    
+}
+
 a {
 	text-decoration: none;
 }
@@ -8,17 +20,20 @@ li {
 
 /* SIDEBAR */
 #sidebar {
-	position: fixed;
-	max-width: 230px;
-	width: 100%;
-	background: white;
-	top: 0;
-	left: 0;
-	height: 100%;
-	overflow-y: auto;
-	scrollbar-width: none;
-	transition: all .3s ease;
-	z-index: 200;
+    position: fixed;
+    max-width: 230px;
+    width: 100%;
+    background: white;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    transition: all 0.3s ease;
+    z-index: 200;
+    display: flex;
+    flex-direction: column; /* Added */
+    justify-content: space-between; /* Added */
 }
 #sidebar.hide {
 	max-width: 50px;
@@ -30,17 +45,17 @@ li {
 	display: none;
 }
 #sidebar .brand {
-	font-size: 24px;
+	font-size: 22px;
 	display: flex;
 	align-items: center;
 	height: 64px;
 	font-weight: 700;
-	color: var(--blue);
+	color: black;
 	position: sticky;
 	top: 0;
 	left: 0;
 	z-index: 100;
-	background: var(--light);
+	/* background: var(--light); */
 	transition: all .3s ease;
 	padding: 0 6px;
 }
@@ -56,9 +71,10 @@ li {
 	transition: all .3s ease;
 }
 #sidebar .side-menu {
-	margin: 36px 0;
-	padding: 0 20px 0px 0px;
-	transition: all .3s ease;
+    flex: 1; /* Added to allow space for ads */
+    margin: 36px 0;
+    padding: 0 20px 0px 0px;
+    transition: all 0.3s ease;
 }
 #sidebar.hide .side-menu {
 	padding: 0 6px 0px 0px;
@@ -116,18 +132,21 @@ li {
 	color: var(--blue);
 }
 #sidebar .ads {
-	width: 100%;
-	padding: 20px;
+    width: 100%;
+    padding: 20px;
+    margin-top: auto; /* Added to push ads to the bottom */
 }
+
+/* Hiding the ads section when sidebar is collapsed */
 #sidebar.hide .ads {
-	display: none;
+    display: none;
 }
 #sidebar.hide:hover .ads {
-	display: block;
+    display: block;
 }
 #sidebar .ads .wrapper {
-	background: var(--grey);
-	padding: 20px;
+	/* background: var(--grey); */
+	padding-left: 10px;
 	border-radius: 10px;
 }
 #sidebar .btn-upgrade {
@@ -135,16 +154,16 @@ li {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 12px 0;
-	color: var(--light);
-	background: var(--blue);
+	padding: 5px 0;
+	color: black;
+	background: #8F92A10D;
 	transition: all .3s ease;
 	border-radius: 5px;
 	font-weight: 600;
 	margin-bottom: 12px;
 }
 #sidebar .btn-upgrade:hover {
-	background: var(--dark-blue);
+	background: var(--grey);
 }
 #sidebar .ads .wrapper p {
 	font-size: 12px;
@@ -153,6 +172,34 @@ li {
 }
 #sidebar .ads .wrapper p span {
 	font-weight: 700;
+}
+
+.team-text {
+	font-family: 'DM Sans';
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 20px;
+	letter-spacing: 1px;
+	text-align: left;
+	text-underline-position: 'from-font';
+	text-decoration-skip-ink: none;
+	color: rgba(143, 146, 161, 1);
+}
+
+.user-info:hover {
+	background-color: var(--grey);
+	border-radius: 12px;
+}
+
+.username-team {
+	font-family: 'DM Sans';
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 24px;
+	letter-spacing: -0.20000000298023224px;
+	text-align: left;
+	text-underline-position: 'from-font';
+	text-decoration-skip-ink: none;
 }
 /* SIDEBAR */
 
@@ -189,16 +236,16 @@ nav .toggle-sidebar {
 	cursor: pointer;
 }
 nav form {
-	max-width: 400px;
+	max-width: 250px;
 	width: 100%;
-	margin-right: auto;
+	margin: auto;
 }
 nav .form-group {
 	position: relative;
 }
 nav .form-group input {
 	width: 100%;
-	background: var(--grey);
+	background: #8F92A10D;
 	border-radius: 5px;
 	border: none;
 	outline: none;
@@ -545,12 +592,23 @@ main .btn-send:hover {
 /* MAIN */
 /* CONTENT */
 
+.user-name {
+	font-family: 'DM Sans';
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 30px;
+	letter-spacing: -0.4000000059604645px;
+	text-align: left;
+	text-underline-position: from-font;
+	text-decoration-skip-ink: none;
+
+}
 
 
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
 	#content {
 		position: relative;
 		width: calc(100% - 60px);
@@ -559,5 +617,9 @@ main .btn-send:hover {
 	nav .nav-link,
 	nav .divider {
 		display: none;
+	}
+
+	.user-name {
+		visibility: hidden;
 	}
 }

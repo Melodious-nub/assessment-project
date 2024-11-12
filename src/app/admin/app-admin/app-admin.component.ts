@@ -1,5 +1,6 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import ApexCharts from 'apexcharts';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-app-admin',
@@ -7,7 +8,7 @@ import ApexCharts from 'apexcharts';
   styleUrl: './app-admin.component.css'
 })
 export class AppAdminComponent {
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef, private renderer: Renderer2, private auth: AuthService) {}
 
   ngAfterViewInit() {
     // SIDEBAR DROPDOWN
@@ -119,4 +120,8 @@ export class AppAdminComponent {
       item.style.setProperty('--value', item.dataset['value'] || '0');
     });
   }
+
+  logOut() {
+    this.auth.logout();
+  } 
 }

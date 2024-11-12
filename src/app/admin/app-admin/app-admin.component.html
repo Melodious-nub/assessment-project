@@ -1,6 +1,6 @@
 <!-- SIDEBAR -->
 <section id="sidebar">
-    <a class="brand"><img src="../../../assets/images/Vector.svg" alt="Vector" class="me-2"> DashboardX</a>
+    <a class="brand ms-3"><img src="../../../assets/images/Vector.svg" alt="Vector" class="me-2"> DashboardX</a>
     <ul class="side-menu">
         <li><a class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
         <li><a><i class='bx bx-message-rounded icon' ></i> Message</a></li>
@@ -16,9 +16,14 @@
         <li><a><i class='bx bx-table icon' ></i> Activity</a></li>
     </ul>
     <div class="ads">
+        <h5 class="team-text">TEAMS</h5>
         <div class="wrapper">
-            <a class="btn-upgrade">Upgrade</a>
-            <p>Become a <span>PRO</span> member and enjoy <span>All Features</span></p>
+            <!-- User Info -->
+            <div class="user-info mb-3">
+                <img src="../../../assets/images/Avatar.png" alt="User Icon" class="user-icon">
+                <span class="username-team ps-2">Seth Daniels</span>
+            </div>
+            <a class="btn-upgrade"><i class='bx bx-plus pe-2'></i> Add new team</a>
         </div>
     </div>
 </section>
@@ -29,6 +34,7 @@
     <!-- NAVBAR -->
     <nav>
         <i class='bx bx-menu toggle-sidebar' ></i>
+        <h4 class="user-name">👋 Hi Nicolas!</h4>
         <form action="#">
             <div class="form-group">
                 <input type="text" placeholder="Search...">
@@ -36,20 +42,20 @@
             </div>
         </form>
         <a class="nav-link">
-            <i class='bx bxs-bell icon' ></i>
+            <i class='bx bx-bell icon' ></i>
             <span class="badge">5</span>
         </a>
         <a class="nav-link">
-            <i class='bx bxs-message-square-dots icon' ></i>
-            <span class="badge">8</span>
+            <i class='bx bx-cart icon' ></i>
+            <span class="badge">2</span>
         </a>
-        <span class="divider"></span>
+        <!-- <span class="divider"></span> -->
         <div class="profile">
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+            <img src="../../../assets/images/48px.png" alt="">
             <ul class="profile-link">
                 <li><a><i class='bx bxs-user-circle icon' ></i> Profile</a></li>
                 <li><a><i class='bx bxs-cog' ></i> Settings</a></li>
-                <li><a><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
+                <li><a type="button" (click)="logOut()"><i class='bx bxs-log-out-circle' ></i> Logout</a></li>
             </ul>
         </div>
     </nav>
