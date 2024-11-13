@@ -16,11 +16,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatSidenavModule} from '@angular/material/sidenav'; 
 import {MatListModule} from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     AppAdminComponent,
+    MessageComponent,
   ],
   imports: [
     CommonModule,

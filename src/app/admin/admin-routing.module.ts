@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppAdminComponent } from './app-admin/app-admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MessageComponent } from './message/message.component';
 
 const routes: Routes = [
   {
@@ -9,6 +10,7 @@ const routes: Routes = [
     component: AppAdminComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent},
+      { path: 'message', component: MessageComponent},
       { path: '', redirectTo: '/admin/dashboard', pathMatch: 'full'},
     ],
   },
