@@ -599,27 +599,51 @@ main .btn-send:hover {
 	line-height: 30px;
 	letter-spacing: -0.4000000059604645px;
 	text-align: left;
-	text-underline-position: from-font;
+	text-underline-position: 'from-font';
 	text-decoration-skip-ink: none;
 
+}
+
+.text-desi {
+	font-family: 'DM Sans';
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 20px;
+	letter-spacing: -0.20000000298023224px;
+	text-align: left;
+	text-underline-position: 'from-font';
+	text-decoration-skip-ink: none;
+	color: #8F92A1;
+}
+
+.btn-custom {
+	background: #0052CC;
+	border-radius: 8px;
+}
+
+.btn-custom:hover {
+	background: #004dc0;
 }
 
 
 
 
-
-@media screen and (max-width: 868px) {
+@media screen and (max-width: 992px) {
 	#content {
 		position: relative;
 		width: calc(100% - 60px);
 		transition: all .3s ease;
 	}
-	nav .nav-link,
+	/* nav .nav-link,
 	nav .divider {
+		display: none;
+	} */
+
+	.user-name {
 		display: none;
 	}
 
-	.user-name {
-		visibility: hidden;
+	.btn-text-hide {
+		display: none;
 	}
 }

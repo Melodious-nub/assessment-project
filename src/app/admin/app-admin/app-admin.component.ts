@@ -119,6 +119,20 @@ export class AppAdminComponent {
     allProgress.forEach((item: HTMLElement) => {
       item.style.setProperty('--value', item.dataset['value'] || '0');
     });
+
+    // Check screen size and collapse the sidebar if on a smaller screen
+    if (window.innerWidth <= 992) {
+      toggleSidebarCollapse();
+    }
+
+    // Listen for window resize to adjust the sidebar state
+    window.addEventListener('resize', () => {
+      if (window.innerWidth <= 992 && !sidebar.classList.contains('hide')) {
+          toggleSidebarCollapse();
+      } else if (window.innerWidth > 992 && sidebar.classList.contains('hide')) {
+          toggleSidebarCollapse();
+      }
+    });
   }
 
   logOut() {

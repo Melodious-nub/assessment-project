@@ -19,10 +19,13 @@
         <h5 class="team-text">TEAMS</h5>
         <div class="wrapper">
             <!-- User Info -->
-            <div class="user-info mb-3">
-                <img src="../../../assets/images/Avatar.png" alt="User Icon" class="user-icon">
-                <span class="username-team ps-2">Seth Daniels</span>
-            </div>
+            <div class="d-flex align-items-center mb-3">
+                <img src="../../../assets/images/Avatar.png" alt="User Icon" class="user-icon me-2">
+                <div>
+                    <p class="username-team text-start mb-0">Seth Daniels</p>
+                    <p class="text-desi text-start mb-0 small">&#64;sethdaniels</p>
+                </div>
+            </div>            
             <a class="btn-upgrade"><i class='bx bx-plus pe-2'></i> Add new team</a>
         </div>
     </div>
@@ -34,13 +37,16 @@
     <!-- NAVBAR -->
     <nav>
         <i class='bx bx-menu toggle-sidebar' ></i>
-        <h4 class="user-name">👋 Hi Nicolas!</h4>
+        <h4 class="user-name text-truncate mb-0" style="max-width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            👋 Hi Nicolas!
+        </h4>
         <form action="#">
             <div class="form-group">
                 <input type="text" placeholder="Search...">
                 <i class='bx bx-search icon' ></i>
             </div>
         </form>
+        <button class="btn btn-primary btn-sm btn-custom"><i class="fa-solid fa-plus"></i> <span class="btn-text-hide ps-1">Start project</span></button>
         <a class="nav-link">
             <i class='bx bx-bell icon' ></i>
             <span class="badge">5</span>
