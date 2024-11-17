@@ -4,7 +4,7 @@
 html, body { 
     height: 100%; 
     margin: 0; 
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif !important;
 }
 
 .container-fluid {

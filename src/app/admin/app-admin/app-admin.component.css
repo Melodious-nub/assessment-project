@@ -277,7 +277,7 @@ nav .nav-link .badge {
 	height: 20px;
 	border-radius: 50%;
 	border: 2px solid var(--light);
-	background: var(--red);
+	background: var(--dark-blue);
 	display: flex;
 	justify-content: center;
 	align-items: center;
