@@ -1,3 +1,4 @@
+
 # Dashboard X
 
 **Dashboard X** is a responsive and dynamic Angular-based project generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
@@ -13,40 +14,43 @@ Make sure you have the following installed on your system:
 
   ```bash
   npm install -g @angular/cli@17.0.5
+  ```
 
-Installation
+## Installation
 
-1. Clone the Repository
+1. **Clone the Repository**
 
-git clone https://github.com/your-username/assessment-project.git
-cd assessment-project
+   ```bash
+   git clone https://github.com/your-username/assessment-project.git
+   cd assessment-project
+   ```
 
+2. **Install Dependencies**
 
-2. Install Dependencies
+   ```bash
+   npm install
+   ```
 
-npm install
-
-
-
-Running the Project
+## Running the Project
 
 To serve the project locally, run:
 
+```bash
 ng serve
+```
 
-Navigate to http://localhost:4200/. The application will automatically reload if any changes are made.
+Navigate to [http://localhost:4200/](http://localhost:4200/). The application will automatically reload if any changes are made.
 
-Login Credentials
+## Login Credentials
 
 To access the dashboard, use the following credentials:
 
-Email: test@test.com
+- **Email**: `test@test.com`
+- **Password**: `Admin123`
 
-Password: Admin123
+## Project Structure
 
-
-Project Structure
-
+```bash
 assessment-project/
 ├── src/
 │   ├── app/
@@ -61,17 +65,10 @@ assessment-project/
 ├── angular.json
 ├── package.json
 └── README.md
+```
 
-components/: Contains all the Angular components used in the project.
-
-services/: Includes services for API calls and business logic.
-
-admin-module/: Manages the admin-related modules and functionalities.
-
-app.route.ts: Manages application routing configuration.
-
-environments/: Configuration for different environments (development/production).
-
-
-
-
+- **components/**: Contains all the Angular components used in the project.
+- **services/**: Includes services for API calls and business logic.
+- **admin-module/**: Manages the admin-related modules and functionalities.
+- **app.route.ts**: Manages application routing configuration.
+- **environments/**: Configuration for different environments (development/production).
