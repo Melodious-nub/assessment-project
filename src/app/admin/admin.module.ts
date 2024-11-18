@@ -15,8 +15,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatSidenavModule} from '@angular/material/sidenav'; 
 import {MatListModule} from '@angular/material/list';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MessageComponent } from './message/message.component';
+import {MatMenuModule} from '@angular/material/menu'; 
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MessageComponent } from './message/message.component';
     CommonModule,
     AdminRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
 
     MatToolbarModule,
     MatFormFieldModule,
@@ -38,6 +40,7 @@ import { MessageComponent } from './message/message.component';
     MatProgressSpinnerModule,
     MatSidenavModule,
     MatListModule,
+    MatMenuModule,
 
     ToastrModule.forRoot({
       timeOut: 2000,

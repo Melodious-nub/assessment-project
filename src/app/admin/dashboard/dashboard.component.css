@@ -1,0 +1,53 @@
+.dashboard-conatiner {
+    width: 100%;
+    height: auto;
+    background: white;
+}
+
+.my-team-section {
+    padding: 15px;
+    background: rgba(143, 146, 161, 0.1);
+    border-radius: 10px;
+}
+
+.my-project-section {
+    padding: 15px;
+    background: rgba(143, 146, 161, 0.1);
+    border-radius: 10px;
+}
+
+.head-text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #8F92A1;
+    letter-spacing: 1px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.moreoption {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.moreoption .navbar {
+    padding: 10px;
+}
+
+.moreoption li .nav-link {
+    color: #222;
+    font-size: 16px;
+}
+
+.moreoption .dropdown-toggle::after {
+    display: none;
+}
+
+.moreoption .dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: auto;
+    right: 0;
+    margin-top: 0.125rem;
+}
+
