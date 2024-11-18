@@ -1,4 +1,4 @@
-# Dashboard X (ass
+# Dashboard X
 
 **Dashboard X** is a responsive and dynamic Angular-based project generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
@@ -9,10 +9,10 @@ Make sure you have the following installed on your system:
 - **Node.js** (version 18.x or higher): [Download Node.js](https://nodejs.org/)
 - **Angular CLI** (version 17.0.5 or higher):
 
-To install Angular CLI globally, run(if already don't have):
+  To install Angular CLI globally, run (if you don't have it already):
 
-```bash
-npm install -g @angular/cli@17.0.5
+  ```bash
+  npm install -g @angular/cli@17.0.5
 
 Installation
 
@@ -66,8 +66,8 @@ components/: Contains all the Angular components used in the project.
 
 services/: Includes services for API calls and business logic.
 
-models/: Defines TypeScript interfaces and models.
+admin-module/: Manages the admin-related modules and functionalities.
 
-routes/: Manages application routing configuration.
+app.route.ts: Manages application routing configuration.
 
 environments/: Configuration for different environments (development/production).
