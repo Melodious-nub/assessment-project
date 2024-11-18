@@ -37,22 +37,28 @@
                             </div>
                             <div class="flex-grow-1 ms-3 mt-1">
                               <h6 style="font-weight: 700;">{{ team.name }}</h6>
-                              <p style="font-size: 12px;">{{ team.members }} members</p>
+                              <p style="font-size: 12px;" class="text-muted">{{ team.members }} members</p>
                             </div>
                           </div>
                         </div>
                         <div class="col-4">
                             <ul class="moreoption">
                                 <li class="navbar nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v fa-lg"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item">Action</a></li>
-                                        <li><a class="dropdown-item">Another action</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item">Something else here</a></li>
-                                    </ul>
+                                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v fa-lg"></i>
+                                  </a>
+                                  <ul class="dropdown-menu">
+                                    <li>
+                                      <a class="dropdown-item" type="button" (click)="editTeam(team)">
+                                        <i class="fa fa-edit me-2"></i> Edit
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a class="dropdown-item" type="button" (click)="deleteTeam(team)">
+                                        <i class="fa fa-trash me-2"></i> Delete
+                                      </a>
+                                    </li>
+                                  </ul>
                                 </li>
                             </ul>
                         </div>
@@ -81,13 +87,13 @@
                   <div class="card h-100" style="border: transparent; border-radius: 16px;">
                     <div class="card-body d-flex justify-content-center align-items-center p-4">
                       <!-- Trigger Modal using HTML attributes -->
-                      <button class="btn" data-bs-toggle="modal" data-bs-target="#addTeamModal">
+                      <button class="btn" type="button" style="border: none;" data-bs-toggle="modal" data-bs-target="#addTeamModal">
                         <i class="fa-solid fa-plus me-1"></i> Add Team
                       </button>
                     </div>
                   </div>
                 </div>
-              </div>
+            </div>
               
               <!-- Add Team Modal -->
               <div class="modal fade" id="addTeamModal" tabindex="-1" aria-labelledby="addTeamModalLabel" aria-hidden="true">
@@ -95,7 +101,7 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <h5 class="modal-title" id="addTeamModalLabel">Add Team</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeTeam()"></button>
                     </div>
                     <form [formGroup]="addTeamForm" (ngSubmit)="addTeam()">
                       <div class="modal-body">
@@ -109,7 +115,7 @@
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeTeam()">Cancel</button>
                         <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Add Team</button>
                       </div>
                     </form>
@@ -150,8 +156,157 @@
             <!-- end header -->
 
             <div class="row">
-                
+                <!-- Loop Through Project Cards -->
+                <div class="col-xl-4 mb-3" *ngFor="let project of projects">
+                    <div class="card h-100" style="border: transparent; border-radius: 16px;">
+                        <div class="card-body d-flex flex-column p-4">
+                          <div class="row">
+                            <div class="col-8">
+                              <div class="d-flex">
+                                <div class="flex-grow-1 mt-1">
+                                  <h6 style="font-weight: 700;">{{project.projectName}}</h6>
+                                  <p style="font-size: 12px;" class="text-muted">{{project.teamName}}</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-4">
+                                <ul class="moreoption">
+                                    <li class="navbar nav-item dropdown">
+                                      <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-ellipsis-v fa-lg"></i>
+                                      </a>
+                                      <ul class="dropdown-menu">
+                                        <li>
+                                          <a class="dropdown-item" type="button" (click)="editProject(project)">
+                                            <i class="fa fa-edit me-2"></i> Edit
+                                          </a>
+                                        </li>
+                                        <li>
+                                          <a class="dropdown-item" type="button" (click)="deleteProject(project)">
+                                            <i class="fa fa-trash me-2"></i> Delete
+                                          </a>
+                                        </li>
+                                      </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-12">
+                                <!-- bagde items -->
+                                <div class="d-flex align-items-center mb-3">
+                                    <!-- Attachment Icon with Count -->
+                                    <div class="me-3 d-flex align-items-center">
+                                      <span class="badge text-dark bg-grey-custom" style="font-size: 12px; border-radius: 12px; padding: 8px;">
+                                        <i class="fa-solid fa-paperclip me-1"></i> {{project.attachmentCount}}
+                                      </span>
+                                    </div>
+                                  
+                                    <!-- Days Left Warning -->
+                                    <div class="d-flex align-items-center">
+                                        <span 
+                                        class="badge"
+                                        [ngClass]="{
+                                            'bg-danger': project.daysLeft < 4,
+                                            'bg-warning text-dark': project.daysLeft >= 4 && project.daysLeft < 10,
+                                            'bg-grey-custom text-dark': project.daysLeft >= 10
+                                        }"
+                                        style="font-size: 12px; border-radius: 12px; padding: 8px;">
+                                        <i class="fa-regular fa-clock me-1"></i> {{ project.daysLeft }} day{{ project.daysLeft !== 1 ? 's' : '' }} left
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- progresss bar -->
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="progress" style="width: 100%; height: 5px;">
+                                        <div 
+                                        class="progress-bar" 
+                                        role="progressbar" 
+                                        [style.width.%]="project.progressValue" 
+                                        style="background-color: #0052CC;"
+                                        aria-valuenow="progressValue" 
+                                        aria-valuemin="0" 
+                                        aria-valuemax="100">
+                                        </div>
+                                    </div>
+                                    <span class="ms-2" style="font-size: 12px; font-weight: 700; letter-spacing: 18;">{{ project.progressValue }}%</span>
+                                </div>
+                                  
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="avatar-list">
+                                    <!-- Display first 10 member icons -->
+                                    <ng-container *ngFor="let i of [].constructor(displayAvatars(project.membersCount))">
+                                        <img src="../../../assets/images/48px.png" alt="Member" class="rounded-circle me-1" style="width: 32px;">
+                                    </ng-container>
+                                    <!-- Display +X for remaining members -->
+                                    <span *ngIf="project.membersCount > 10" class="ms-1 text-muted"
+                                            style="background: rgba(143, 146, 161, 0.1); padding: 6px; font-size: 12px; border-radius: 50%;">
+                                        +{{ project.membersCount - 10 }}
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add project Card -->
+                <div class="col-xl-4 mb-3">
+                    <div class="card h-100" style="border: transparent; border-radius: 16px;">
+                      <div class="card-body d-flex justify-content-center align-items-center p-4">
+                        <!-- Trigger Modal using HTML attributes -->
+                        <button class="btn" style="border: none;" type="button" data-bs-toggle="modal" data-bs-target="#addProjectModal">
+                          <i class="fa-solid fa-plus me-1"></i> Add Project
+                        </button>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Add Project Modal -->
+                <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="addProjectModalLabel">Add New Project</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeProject()"></button>
+                        </div>
+                        <div class="modal-body">
+                        <form [formGroup]="projectForm" (ngSubmit)="addProject()">
+                            <div class="mb-3">
+                            <label for="projectName" class="form-label">Project Name</label>
+                            <input type="text" id="projectName" formControlName="projectName" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                            <label for="teamName" class="form-label">Team Name</label>
+                            <input type="text" id="teamName" formControlName="teamName" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                            <label for="attachmentCount" class="form-label">Attachment Count</label>
+                            <input type="number" id="attachmentCount" formControlName="attachmentCount" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                            <label for="daysLeft" class="form-label">Days Left</label>
+                            <input type="number" id="daysLeft" formControlName="daysLeft" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                            <label for="progressValue" class="form-label">Progress (%)</label>
+                            <input type="number" id="progressValue" formControlName="progressValue" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                            <label for="membersCount" class="form-label">Members Count</label>
+                            <input type="number" id="membersCount" formControlName="membersCount" class="form-control" required>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="closeProject()">Close</button>
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Add Project</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- modal end -->
             </div>
         </div>
     </div>
+    <!-- end project section -->
 </div>
