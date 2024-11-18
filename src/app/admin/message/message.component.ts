@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 
 // Chat and Group Interfaces
 interface Chat {
@@ -46,6 +46,35 @@ export class MessageComponent {
   // Selected Chat and Group
   selectedChat: Chat | null = null;
   selectedGroup: Group | null = null;
+
+  @ViewChild('chatBox') chatBox!: ElementRef;
+  @ViewChild('chatIcon') chatIcon!: ElementRef;
+
+  constructor(private renderer: Renderer2) {}
+
+  ngAfterViewInit() {
+    // Adding click listener for chat list items
+    const chatListItems = document.querySelectorAll('.chat-list a');
+
+    chatListItems.forEach((chatItem) => {
+      this.renderer.listen(chatItem, 'click', (event) => {
+        event.preventDefault();
+        this.renderer.addClass(this.chatBox.nativeElement, 'showbox');
+      });
+    });
+
+    // Adding click listener for back button (chat icon)
+    this.renderer.listen(this.chatIcon.nativeElement, 'click', () => {
+      this.renderer.removeClass(this.chatBox.nativeElement, 'showbox');
+    });
+  }
+
+  backToChatList() {
+    // Close the chatbox and navigate back to chat list
+    this.renderer.removeClass(this.chatBox.nativeElement, 'showbox');
+    this.selectedChat = null;
+    this.selectedGroup = null;
+  }
 
   // Method to select a chat
   selectChat(chat: Chat) {

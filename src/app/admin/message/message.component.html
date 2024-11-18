@@ -70,14 +70,14 @@
   
 
                 <!-- chatbox -->
-                <div class="chatbox">
+                <div class="chatbox" #chatBox>
                     <div class="modal-dialog-scrollable">
                         <div class="modal-content" *ngIf="selectedChat || selectedGroup">
                             <div class="msg-head">
                                 <div class="row">
                                     <div class="col-8">
                                         <div class="d-flex align-items-center">
-                                            <!-- <span class="chat-icon"><img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/arroleftt.svg" alt="image title"></span> -->
+                                            <span #chatIcon class="chat-icon d-md-none" (click)="backToChatList()" type="button"><img class="img-fluid" src="https://mehedihtml.com/chatbox/assets/img/arroleftt.svg"  alt="back"></span>
                                             <div class="flex-shrink-0" *ngIf="selectedChat?.image">
                                                 <img class="img-fluid" src="{{selectedChat?.image}}" alt="user img">
                                             </div>
