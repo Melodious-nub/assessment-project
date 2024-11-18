@@ -67,27 +67,28 @@ assessment-project/
 └── README.md
 ```
 
-- **components/**: Contains all the Angular components used in the project.
-- **services/**: Includes services for API calls and business logic.
-- **admin-module/**: Manages the admin-related modules and functionalities.
+- **components**: Contains all the Angular components used in the project.
+- **services**: Includes services for API calls and business logic.
+- **admin-module**: Manages the admin-related modules and functionalities.
 - **app.route.ts**: Manages application routing configuration.
-- **environments/**: Configuration for different environments (development/production).
+- **environments**: Configuration for different environments (development/production).
 
 ## Features Covered
 
-Login & Registration UI: User-friendly interfaces for logging in and registering new users.
+**Login & Registration UI:** User-friendly interfaces for logging in and registering new users.
 
-AuthGuard: Route protection based on user authentication status.
+**AuthGuard:** Route protection based on user authentication status.
 
-Interceptor: HTTP Interceptor for handling API requests and responses (e.g., adding authorization tokens).
+**Interceptor:** HTTP Interceptor for handling API requests and responses (e.g., adding authorization tokens).
 
-Admin Module: A dedicated module for admin functionalities and settings.
+**Admin Module:** A dedicated module for admin functionalities and settings.
 
-Dashboard: An interactive dashboard with user data and analytics.
+**Dashboard:** An interactive dashboard with user data and analytics.
 
-Messages: A section for user messages and notifications.
+**Messages:** A section for user messages and notifications.
 
 
 ## Contact
 
-For any queries or feedback, please feel free to reach out. Email: shawon.taluckder2@gmail.com
+For any queries or feedback, please feel free to reach out. 
+**Email:** shawon.taluckder2@gmail.com
