@@ -291,7 +291,7 @@ a.add img {
     position: relative;
 }
 
-.msg-body ul li.sender:before {
+/* .msg-body ul li.sender:before {
     display: block;
     clear: both;
     content: '';
@@ -306,7 +306,7 @@ a.add img {
     -webkit-transform: rotate(-37deg);
     -ms-transform: rotate(-37deg);
     transform: rotate(-37deg);
-}
+} */
 
 .msg-body ul li.sender p {
     color: #000;
@@ -337,7 +337,7 @@ a.add img {
     position: relative;
 }
 
-.msg-body ul li.repaly:before {
+/* .msg-body ul li.repaly:before {
     display: block;
     clear: both;
     content: '';
@@ -352,7 +352,7 @@ a.add img {
     -webkit-transform: rotate(37deg);
     -ms-transform: rotate(37deg);
     transform: rotate(37deg);
-}
+} */
 
 .msg-body ul li.repaly p {
     color: #fff;
