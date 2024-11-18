@@ -72,3 +72,22 @@ assessment-project/
 - **admin-module/**: Manages the admin-related modules and functionalities.
 - **app.route.ts**: Manages application routing configuration.
 - **environments/**: Configuration for different environments (development/production).
+
+## Features Covered
+
+Login & Registration UI: User-friendly interfaces for logging in and registering new users.
+
+AuthGuard: Route protection based on user authentication status.
+
+Interceptor: HTTP Interceptor for handling API requests and responses (e.g., adding authorization tokens).
+
+Admin Module: A dedicated module for admin functionalities and settings.
+
+Dashboard: An interactive dashboard with user data and analytics.
+
+Messages: A section for user messages and notifications.
+
+
+## Contact
+
+For any queries or feedback, please feel free to reach out. Email: shawon.taluckder2@gmail.com
